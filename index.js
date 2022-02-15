@@ -99,4 +99,15 @@ app.delete("/students/:id",  async (req,res)=>{
     res.send(student);
 });
 
+app.put("/students/:id", async (req,res)=>{
+    const {id} = req.params;
+    const updatedStudent = req.body;
+    console.log(req.body)
+    const Student = await client
+    .db("mentorstudent")
+    .collection("mentors")
+    .updateOne({id:id},{$set:updatedStudent});
+    res.send(Student);
+});
+
 app.listen(PORT, ()=>console.log(`Server Started in localhost:${PORT} `)); 
