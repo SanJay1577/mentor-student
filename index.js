@@ -54,6 +54,18 @@ app.post("/mentors", async (req,res)=>{
     res.send(postedMentor);
 });
 
+app.put("/mentors/:id", async (req,res)=>{
+    const {id} = req.params;
+    const updatedMentor = req.body;
+    console.log(req.body)
+    const Mentor = await client
+    .db("mentorstudent")
+    .collection("mentors")
+    .updateOne({id:id},{$set:updatedMentor});
+    res.send(Mentor);
+});
+
+
 
 app.get("/students", async (req,res)=>{
     console.log(req.query);
