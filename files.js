@@ -28,11 +28,11 @@ db.mentors.insertMany([
   db.students.insertMany([
       {
         id: "1",
-        name: "Sanjay",
+        name: "changed Name",
       },
       {
         id: "2",
-        name: "Saravana",
+        name: "changes mame 2",
       },
       {
         id: "3",
