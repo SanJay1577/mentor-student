@@ -24,6 +24,7 @@ db.mentors.insertMany([
       name: "Basheer",
     }
   ])
+  //stash comment
   
   db.students.insertMany([
       {
